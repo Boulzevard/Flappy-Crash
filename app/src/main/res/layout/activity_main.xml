@@ -17,6 +17,7 @@
         android:backgroundTint="#FFFFFF"
         android:ems="3"
         android:fontFamily="@font/press_start_2p"
+        android:hint="@string/nombre_de_secondes"
         android:inputType="numberDecimal"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"

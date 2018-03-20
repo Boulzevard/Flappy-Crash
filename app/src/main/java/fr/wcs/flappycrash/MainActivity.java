@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Hey cousin, t'as rien mis !", Toast.LENGTH_SHORT).show();
                 }
 
+                else if (seconds >= 60) {
+                    Toast.makeText(MainActivity.this, "Oh t'abuse, la flemme d'attendre aussi longtemps...", Toast.LENGTH_SHORT).show();
+                }
+
                 else {
                     final TextView timer = findViewById(R.id.textView_timer);
 
@@ -57,7 +61,12 @@ public class MainActivity extends AppCompatActivity {
 
                     myThread.start();
                     message.setVisibility(View.VISIBLE);
-                    message.setText("Ok, je vais planter dans " + seconds + "sec... A plus");
+                    if (seconds > 30) {
+                        message.setText("Hey t'es patient... ok c'est parti pour " + seconds + "sec... Après je plante !");
+                    }
+                    else {
+                        message.setText("Ok, je vais planter dans " + seconds + "sec... A plus");
+                    }
 
                     CountDownTimer count = new CountDownTimer((seconds+1) * 1000 , 1000) {
                         @Override
