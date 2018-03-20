@@ -3,5 +3,5 @@
     <string name="c_set_partie">C\'est partie !!!</string>
     <string name="message_final">message final</string>
     <string name="combien_de_d_lai_veux_tu">Combien de délai veux tu?</string>
-    <string name="nombre_de_secondes">nombre de secondes</string>
+    <string name="nombre_de_secondes">sec</string>
 </resources>

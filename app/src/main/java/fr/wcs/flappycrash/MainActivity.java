@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     final TextView timer = findViewById(R.id.textView_timer);
 
-
                     Thread myThread = new Thread(){
                         @Override
                         public void run() {
@@ -44,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
                                 sleep(1000*seconds);
 
 
-                                message.setText("Ok, je vais planter dans " + seconds + "sec... A plus");
+                                EditText editPlantage = findViewById(R.id.editText_plantage);
+                                String stringPlantage = editPlantage.getText().toString();
+                                int plantage = Integer.parseInt(stringPlantage);
 
 
 
@@ -57,6 +58,21 @@ public class MainActivity extends AppCompatActivity {
                     myThread.start();
                     message.setVisibility(View.VISIBLE);
                     message.setText("Ok, je vais planter dans " + seconds + "sec... A plus");
+
+                    CountDownTimer count = new CountDownTimer((seconds+1) * 1000 , 1000) {
+                        @Override
+                        public void onTick(long l) {
+                            timer.setText("" + l / 1000);
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+
+                        }
+                    };
+
+                    count.start();
 
                 }
 
